@@ -1,12 +1,12 @@
 api_url = "https://api.inaturalist.org/v1/"
 
 query = {
-    # "lat" : -33.554166688548584,
-    # "lng" : -70.37831746080964,
-    # "radius" : 5,
+    "lat" : -33.554166688548584,
+    "lng" : -70.37831746080964,
+    "radius" : 4,
     "per_page" : 200,
     "page" : 1,
-    "project_id" : 147054
+    # "project_id" : 147054
 }
 
 taxa = [

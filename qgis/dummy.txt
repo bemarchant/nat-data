@@ -1,0 +1,1 @@
+{'Abrothrix longipilis', 'Lasiurus varius', 'Lasiurus cinereus', 'Lasiurus cinereus villosissimus', 'Puma concolor concolor', 'Phyllotis darwinii', 'Abrocoma bennettii', 'Myotis chiloensis', 'Thylamys elegans'}

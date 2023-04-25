@@ -93,41 +93,51 @@ with open("data","r+") as data_json:
 # plt.plot_histogram()
 #end plot
 
-# taxa = 372739
-# obs = [obs for obs in data['results'] if is_in_taxa(obs, taxa)] 
-# print(f"all : {len(obs)}")
+taxa = 47170
+obs = [obs for obs in data['results'] if is_in_taxa(obs, taxa)] 
+print(f"all : {len(obs)}")
 
-# obs = [obs for obs in data['results'] if is_research_quality(obs)] 
-# print(f"is_research_quality : {len(obs)}")
+obs = [obs for obs in data['results'] if is_research_quality(obs) and is_in_taxa(obs, taxa)] 
+print(f"is_research_quality : {len(obs)}")
 
-# obs = [obs for obs in data['results'] if is_casual_quality(obs)] 
-# print(f"is_casual_quality : {len(obs)}")
+obs = [obs for obs in data['results'] if is_needs_id_quality(obs) and is_in_taxa(obs, taxa)] 
+print(f"is_needs_id_quality : {len(obs)}")
 
-# obs = [obs for obs in data['results'] if is_needs_id_quality(obs)] 
-# print(f"is_needs_id_quality : {len(obs)}")
+obs = [obs for obs in data['results'] if is_casual_quality(obs) and is_in_taxa(obs, taxa)] 
+print(f"is_casual_quality : {len(obs)}")
 
+#get number of species inside taxonomy
+obs = [obs for obs in data['results'] if is_in_taxa(obs, taxa) and is_research_quality(obs)] 
+species_list = [o['taxon']['name'] for o in obs if is_research_quality(o)]
+species_set = set(species_list)
+species_count = [species_list.count(s) for s in species_set]
+print(species_set)
+print(species_count)
+print(len(species_set))
+
+# print(f"species : {len(species)}")
 
 #Get all observations
-obs = [obs for obs in data['results']]
+# obs = [obs for obs in data['results']]
 
-for ob in obs:
-    geoprivacy = ob['taxon_geoprivacy']
+# for ob in obs:
+#     geoprivacy = ob['taxon_geoprivacy']
     
-    try:
-        name =  ob['taxon']['name']
-    except:
-        name = "???"
+#     try:
+#         name =  ob['taxon']['name']
+#     except:
+#         name = "???"
 
-    try:
-        date = ob['observed_on_details']['date']
-    except:
-        date = "???"
+#     try:
+#         date = ob['observed_on_details']['date']
+#     except:
+#         date = "???"
 
-    loc = ob['location']
-    id = ob['id']
-    qualitygrade = ob['quality_grade']
+#     loc = ob['location']
+#     id = ob['id']
+#     qualitygrade = ob['quality_grade']
 
-    print(f"{name}, {loc}, {date}, {id}, {geoprivacy}, {qualitygrade}")
+#     print(f"{name}, {loc}, {date}, {id}, {geoprivacy}, {qualitygrade}")
 
 # get all observations by month
 # for month in range(1,13):
