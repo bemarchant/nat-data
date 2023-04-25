@@ -1,7 +1,6 @@
 import requests
 import json
 import plots as plt
-import pandas as pd
 from datetime import datetime
 
 from constants import *
@@ -109,22 +108,26 @@ with open("data","r+") as data_json:
 
 
 #Get all observations
-# obs = [obs for obs in data['results']]
+obs = [obs for obs in data['results']]
 
-# for ob in obs:
-#     geoprivacy = ob['taxon_geoprivacy']
+for ob in obs:
+    geoprivacy = ob['taxon_geoprivacy']
     
-#     # name = ""
-#     name = ob['taxon']['name']
-    
-#     # date = "???"
-#     date = ob['observed_on_details']['date']
-    
-#     loc = ob['location']
-#     id = ob['id']
-#     qualitygrade = ob['quality_grade']
+    try:
+        name =  ob['taxon']['name']
+    except:
+        name = "???"
 
-#     print(f"{name}, {loc}, {date}, {id}, {geoprivacy}, {qualitygrade}")
+    try:
+        date = ob['observed_on_details']['date']
+    except:
+        date = "???"
+
+    loc = ob['location']
+    id = ob['id']
+    qualitygrade = ob['quality_grade']
+
+    print(f"{name}, {loc}, {date}, {id}, {geoprivacy}, {qualitygrade}")
 
 # get all observations by month
 # for month in range(1,13):
@@ -132,8 +135,8 @@ with open("data","r+") as data_json:
 
 
 # get all observations tagged in the project El Manzano
-obs = [obs for obs in data['results'] if is_needs_id_quality(obs) or is_research_quality] 
-print(f"all : {len(obs)}")
+# obs = [obs for obs in data['results'] if is_needs_id_quality(obs) or is_research_quality] 
+# print(f"all : {len(obs)}")
 
-for month in range(1,13):
-     print (f"month: {month} -- {len([ob for ob in obs if is_in_month(ob, month)])}")
+# for month in range(1,13):
+#      print (f"month: {month} -- {len([ob for ob in obs if is_in_month(ob, month)])}")
