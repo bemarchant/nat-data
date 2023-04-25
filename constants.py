@@ -1,0 +1,85 @@
+api_url = "https://api.inaturalist.org/v1/"
+
+query = {
+    # "lat" : -33.554166688548584,
+    # "lng" : -70.37831746080964,
+    # "radius" : 5,
+    "per_page" : 200,
+    "page" : 1,
+    "project_id" : 147054
+}
+
+taxa = [
+    {"taxon_id" : 372739,
+     "taxon_name" : 'Hexapoda',
+     "common_name" : 'Insectos',
+     "observations" : 10,
+     "needs_id": 0,
+     "research_grade" : 0,
+     "casual" : 0,
+     "icon_path" : "icon/insect-icon.png" 
+     },
+    {"taxon_id" : 3,
+     "taxon_name" : 'Aves',
+     "common_name" : 'Aves',
+     "observations" : 20,
+     "needs_id": 0,
+     "research_grade" : 0,
+     "casual" : 0,
+     "icon_path" : "icon/bird-icon.png" 
+     },
+    {"taxon_id" : 245097,
+     "taxon_name" : 'Chelicerata',
+     "common_name" : 'Aracnidos y Cangrejos',
+     "observations" : 30,
+     "needs_id": 0,
+     "research_grade" : 0,
+     "casual" : 0,
+     "icon_path" : "icon/spider-icon.png" 
+     },
+    {"taxon_id" : 26036,
+     "taxon_name" : 'Reptilia',
+     "common_name" : 'Reptiles',
+     "observations" : 40,
+     "needs_id": 0,
+     "research_grade" : 0,
+     "casual" : 0,
+     "icon_path" : "icon/reptile-icon.png" 
+     },
+    {"taxon_id" : 40151,
+     "taxon_name" : 'Mamíferos',
+     "common_name" : 'Mammalia',
+     "observations" : 50,
+     "needs_id": 0,
+     "research_grade" : 0,
+     "casual" : 0,
+     "icon_path" : "icon/mammal-icon.png" 
+     },
+    {"taxon_id" : 20978,
+     "taxon_name" : 'Amphibia',
+     "common_name" : 'Anfibios',
+     "observations" : 60,
+     "needs_id": 0,
+     "research_grade" : 0,
+     "casual" : 0,
+     "icon_path" : "icon/frog-icon.png" 
+     },
+    {"taxon_id" : 47126,
+     "taxon_name" : 'Plantae',
+     "common_name" : 'Plantas',
+     "observations" : 70,
+     "needs_id": 0,
+     "research_grade" : 0,
+     "casual" : 0,
+     "icon_path" : "icon/plant-icon.png" 
+     },
+    {"taxon_id" : 47170,
+     "taxon_name" : 'Fungi',
+     "common_name" : 'Hongos',
+     "observations" : 80,
+     "needs_id": 0,
+     "research_grade" : 0,
+     "casual" : 0,
+     "icon_path" : "icon/mushroom-icon.png" 
+     },
+]
